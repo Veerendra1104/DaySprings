@@ -22,8 +22,7 @@
       -> rails --version 
       -> gem insatll rails
       -> rails new ProjectName
-
-#Day2
+# Day2
       * Project with Postgresql
             * There are mainly 3 cmds used 
                   -> rails db:create ( to create the database . )
