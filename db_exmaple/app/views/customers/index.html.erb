@@ -1,0 +1,43 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Customers" %>
+
+<marquee direction="right"> <h1 style="color : red;">Customers</h1> </marquee>
+
+
+<div id="customers">
+
+  <table id="table_cts"  border = "2px solid black ;"  > 
+   <thead>
+    <tr>
+      <th> Name  </th>
+      <th> Email </th>
+      <th> View  </th>
+      </tr> 
+    
+     </head>
+
+     <tbody>
+       <% @customers.each do |customer| %>
+       <tr>
+        <td> <%= customer.name %> </td>
+        <td> <%= customer.email %> </td>
+        <td>   <%= link_to "Show this customer", customer %> </td>
+       </tr> 
+      
+
+
+        <% end %>
+      </tbody>
+  </table>
+
+   
+
+</div>
+
+<br>
+<br>
+
+
+<Button id="new_customer"> <%=  link_to "New customer", new_customer_path %> </Button>
+
