@@ -1,0 +1,11 @@
+<p class="notice"><%= notice %></p>
+
+<div class="customer-card">
+  <%= render @customer %>
+
+  <div class="card-actions">
+    <%= link_to "Edit", edit_customer_path(@customer), class: "btn edit-btn" %>
+    <%= link_to "Back", customers_path, class: "btn back-btn" %>
+    <%= button_to "Destroy", @customer, method: :delete, class: "btn delete-btn" %>
+  </div>
+</div>
