@@ -111,6 +111,50 @@
                              * Helpful for testing and setup                  
                              * Run using:
                                    -> rails db:seed
+# Day4
+      * app Folder 
+            -> Its is the main folder and the code which is written .
+            -> THe folder are 
+                  * Controllers
+                        -> These containes the controllers which handles request and provides response .
+                  * Views
+                        -> These contains the .html.erb files which are used to for UI .
+                  * Models
+                        -> These maintians the database tables .
+                  * Javascript
+                        -> These folders are introduces from ruby version 8 which are intrgrated to handle the UI .
+                  * mailers
+                        -> These contains the files where these files are used to send the specific mails for specific action .
+                  * jobs
+                        -> These conatins the files that subject to perform  specific operation at the specific time .
+
+             Note :
+                   The project is said to be strong with the thin controller and thick models which means the majolry database logic should be written int the models .
+
+      * Data types :
+            -> Primitive data types 
+                  * String ( mutable : the address may or may not change  )
+                  * Integer
+                  * Bignum
+                  * float 
+                  * symbol ( immutable )
+                  * Boolean
+                  * nil
+            -> The every primitive data types stores in format of object .
+            -> The efault value will be nil if it nt initialize .
+      
+      * variables :
+            -> There are mainly 6 data types 
+                  * Local - just common name 
+                  * global - starts with $
+                  * instance - starts with @
+                  * class - starts with @@
+                  * constants - upercase 
+
+      
+            
+
+
             
       
 
