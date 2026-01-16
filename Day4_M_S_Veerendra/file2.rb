@@ -5,6 +5,8 @@ is_male = true
 height = 6.8
 is_handicap = false
 data = nil
+arr = []
+hash = {}
 
 puts name.class
 puts age.class
@@ -13,12 +15,17 @@ puts is_male.class
 puts height.class
 puts is_handicap.class
 puts data.class
+puts arr.class
+puts hash.class
+
 
 class Greet
   puts "Hello From DaySprings ."  
 end
 
 puts Greet.new.class
+
+# Output 
 
 # String
 # Integer
@@ -27,5 +34,7 @@ puts Greet.new.class
 # Float
 # FalseClass
 # NilClass
+# Array
+# Hash
 # Hello From DaySprings .
 # Greet
