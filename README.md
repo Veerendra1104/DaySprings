@@ -150,7 +150,43 @@
                   * instance - starts with @
                   * class - starts with @@
                   * constants - upercase 
+# Day 5
+      * Note : 
+            -> The method will return automatically if neccasary conditions ( Like if  ) then use return .
+            -> Comments 
+                  * Single line comment : using #
+                  * Double line comment : using =begin   =end
 
+      * Type Casting :
+            -> The defualt get will be string 
+            -> There is no implicit typecasting we need to do explicilty .
+            -> Some of are :
+                         * String to int : .to_i
+                         * int to string : .to_s
+                         * String to float : .to_f
+                         * float to string : .to_s
+
+      * Created the new package of Product 
+            -> Command : rails generate scaffold Product name:string description:text price:decimal stack:integer is_active:boolean 
+            -> After every db command should be migrated by db:migrate
+            -> Ways to insert the data 
+                  1. By Ui : The rails give the auto ui for insertion .
+                  2. By Data manually : Using the databse workbench like dbeaver we can add and modify data .
+                        -> INSERT INTO "products" ("name", "description", "price", "stock", "is_active", "created_at", "updated_at") VALUES ('Iq ', 'The iq new product', 80, 2, TRUE, '2026-01-16 ', '2026-01-16') 
+                  3. By Placing the data insertion command in the seed.rb and run the db:seed command to insert .
+                        -> Product.create(name:"Tesla 1",description:  "The tesla 1 product", price: 900,stock: 30,is_active: true)
+                        -> Product.create(name:"Tesla 2",description:  "The tesla 2 product", price: 9000,stock: 300,is_active: true)
+                  4. By using the rails console which provides the platform to interact By using the runy commands 
+                        -> Product.create(name:"Tesla",description:  "The tesla product", price: 90,stock: 3,is_active: true)
+             -> Note :
+                   * During the execution of the rails query command i made a mistake of giving space so the command should be 
+                         * sensitive with only the table name with starting letter capital and other small 
+                         * THe space should not be given during giving of column name 
+                         * if string use "" .
+                       
+                  
+                  
+                  
       
             
 
