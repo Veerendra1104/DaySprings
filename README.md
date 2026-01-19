@@ -183,6 +183,37 @@
                          * sensitive with only the table name with starting letter capital and other small 
                          * THe space should not be given during giving of column name 
                          * if string use "" .
+# Day 6 :
+      * Loops :
+            -> The rails contains the ibuilt loops they are 
+                  * for loop :
+                        -> The for loop the initialization is given and its performs auto increment ie : +1 .
+                  * while loop :
+                        -> This loop checks the conditions , if the condition is true then its get in .
+                  * Loop ( Similar to do while loop ) :
+                        -> This performs the opreration and checks condition later .
+                  * until loop :
+                        -> This runs the loop untill the condtion becomes true .
+      * In built methods for Collections :
+            1. each : The method which is used to acess the each element in the array or thers .
+            2. select : This method which is used achive the specific condition which are eligible for the condtion those are fetched .
+            3. reject : This method which is used achive the specific condition which are eligible for the condtion those are fetched .
+            4. map , collect : These are same methods which is used to iterate through each value and acess them .
+      Note :
+            * These methods does not effect arrays , the arrays remains same .
+            * If we need to modify the array then use ! after the method 
+                  -> Example : select!{} .
+            * The method to return the boolean then it should use ? after method name 
+                  -> Example : all?
+
+      * Method of rails for data communication :
+            -> pluck is used to select the specific column .
+                  Example : # @product = Product.all.limit(10)
+                            # @stock = Product.all.limit(10).pluck(:stock)
+                            # @prices = Product.all.limit(10).pluck(:price)
+            * Question : Select 10 products which are in active condtition .
+                  Ans : Product.all.limit(10).select{|n| n.is_active = true}
+      
                        
                   
                   
