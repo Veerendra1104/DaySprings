@@ -17,11 +17,6 @@
                   1. rails new project_name 
                   2. rails new createapionly ( For specificaly : Example if required two teir )
                   3. Scalefold ( It auto sets Controller and others for mvc )
-# Commands to remmber :
-      -> ruby --version
-      -> rails --version 
-      -> gem insatll rails
-      -> rails new ProjectName
 # Day2
       * Project with Postgresql
             * There are mainly 3 cmds used 
@@ -178,6 +173,8 @@
                         -> Product.create(name:"Tesla 2",description:  "The tesla 2 product", price: 9000,stock: 300,is_active: true)
                   4. By using the rails console which provides the platform to interact By using the runy commands 
                         -> Product.create(name:"Tesla",description:  "The tesla product", price: 90,stock: 3,is_active: true)
+            -> Faker Api :
+                  * Using Faker Api which is used to insert the fake data By using the Gems .
              -> Note :
                    * During the execution of the rails query command i made a mistake of giving space so the command should be 
                          * sensitive with only the table name with starting letter capital and other small 
@@ -213,7 +210,38 @@
                             # @prices = Product.all.limit(10).pluck(:price)
             * Question : Select 10 products which are in active condtition .
                   Ans : Product.all.limit(10).select{|n| n.is_active = true}
+# Day 7 :
+      * Class :
+            -> The class name should be write in the Camel Case , Example : CustomController .
+      * Methods :
+            -> THe method or variable name sould be in the snake clase , Example : limit_active .
+      * Inheritance :
+            * Its allows only single level inheritance .
+            * The super keyword is used to access the parents method and variables .
+            * Method Hirerachy : The methods work flow will be 
+                  -> Child 
+                  -> Base
+                  -> Object 
+                  -> Kernel
+                  -> BasicObject .
+      * Ancestores :
+            -> The method during fetching it fetches from child and later goes to flow as shown above .
+      * responds_to :
+            -> It's check whether the method is exists or not .
+                 * Example : "Sample".responds_to?(:uppercase) .
+                           2 . The responds_to? return true for the inbuilts methods of child class if not overiden as these are present in the inbuilts class  , Base, Object, Kernel, Basic Object .
+      Note :
+            -> The puts methods will not be access without overriding because it is private methods .
+
+# Commands to remmber :
+      -> ruby --version
+      -> rails --version 
+      -> gem insatll rails
+      -> rails new ProjectName
+            
+            
       
+            
                        
                   
                   
