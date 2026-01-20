@@ -232,6 +232,7 @@
                            2 . The responds_to? return true for the inbuilts methods of child class if not overiden as these are present in the inbuilts class  , Base, Object, Kernel, Basic Object .
       Note :
             -> The puts methods will not be access without overriding because it is private methods .
+            -> The basicObject is only able to acess the private varibales which is fetature of ruby .
 
 # Commands to remmber :
       -> ruby --version
