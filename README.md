@@ -180,7 +180,7 @@
                          * sensitive with only the table name with starting letter capital and other small 
                          * THe space should not be given during giving of column name 
                          * if string use "" .
-# Day 6 :
+# Day 6 
       * Loops :
             -> The rails contains the ibuilt loops they are 
                   * for loop :
@@ -210,7 +210,7 @@
                             # @prices = Product.all.limit(10).pluck(:price)
             * Question : Select 10 products which are in active condtition .
                   Ans : Product.all.limit(10).select{|n| n.is_active = true}
-# Day 7 :
+# Day 7 
       * Class :
             -> The class name should be write in the Camel Case , Example : CustomController .
       * Methods :
@@ -222,7 +222,7 @@
                   -> Child 
                   -> Base
                   -> Object 
-                  -> Kernel
+                  -> Kernel ( its not a class it is a module . )
                   -> BasicObject .
       * Ancestores :
             -> The method during fetching it fetches from child and later goes to flow as shown above .
@@ -233,12 +233,104 @@
       Note :
             -> The puts methods will not be access without overriding because it is private methods .
             -> The basicObject is only able to acess the private varibales which is fetature of ruby .
-
+# Day 8 :
+      * Conditional Statements :
+            -> There are used to perform the operations based on the conditions .
+            -> There are mainly 3 types 
+                  * If Else: 
+                        -> it check the condtion and enters if condition satisfies .
+                              * Example : stock = -20
+                                        is_availabe = false
+                                        if stock > 0
+                                        is_availabe = true
+                                        else 
+                                        puts "Item not availabe ."
+                                        end
+                  * Els If :
+                        -> Here two or more conditions can be checked .
+                              * Example : price = 350
+                                          discount = 0
+                                          if price > 100
+                                            discount = 10
+                                          elsif price > 200
+                                            discount = 20
+                                          elsif price > 300
+                                            discount = 30
+                                          elsif present > 400
+                                            discount = 40  
+                                          else
+                                            discount = 5
+                                          end
+                                          
+                                          puts discount
+                  * Ternary Operator :
+                        -> It is similar to the if but written in the single line similar to lambda .
+                              * Example : puts is_active ? " Item present" :  "Not present"
+                  * Unless :
+                        -> it is oppsoite to the if where if the condition is true it goes to else part .
+                              * Example : stock = 15
+                                          unless stock < 0
+                                            puts "Stock availabe"
+                                          else
+                                            puts "Stock "
+                  * Cases :
+                        -> It is used to perform the specific operation by switching to the corresponding condtition .
+                        -> Example : price = 350
+                                    discount = 0
+                                    case  
+                                    when price >= 100  &&  price < 200
+                                      discount = 10
+                                    when  price>= 200 &&  price < 300
+                                      discount = 20 
+                                    when price >= 300 &&  price < 400
+                                      discount = 30
+                                    when price >= 400 &&  price < 500
+                                      discount = 40
+                                    else
+                                      discount = 5
+                                    end
+                        -> Note :
+                              * When the logic , and, or, < , >  are used without any varibale refernce as shown in the below .
+                              * When the ranges , flag are used then no need of variable as shown below 
+                                    Example : case  price
+                                                when 100..200
+                                                  discount = 10
+                                                when  200..300
+                                                  discount = 20 
+                                                when 300..400
+                                                  discount = 30
+                                                when 400..500
+                                                  discount = 40
+                                                else
+                                                  discount = 5
+                                                end
+                                                
+                                                puts discount
+                                                
+      * Acess Modifier : 
+            -> There are 3 types of access modifiers 
+                  * Public : These class or methods can be acess any where as it is made public .
+                  * Private : The methods cannot be acessed outside of the class it belongs to only inside the class .
+                  * Protected : These class or methods which can be accessed inside classs or sub classes .
+            -> Note :
+                  * To fetch the private methods , we need to call them in the public method and as the method is public now we can acess them indirectly .
+                  * To fetch the protected methods do as similar to above or we can call the in child / sub class public methods and can access them .
 # Commands to remmber :
       -> ruby --version
       -> rails --version 
       -> gem insatll rails
       -> rails new ProjectName
+      -> rails g Scaffold Customers name: string email:string 
+      -> rails g Contoller Products ( creates only controllers )
+      -> rails g model Product ( creates only model )
+      -> rails db:create
+      -> rails db: seed
+      -> rails db:migrate 
+      -> rails new project_name --skip -test ( which creates the file without test )
+      -> rails c( which creates the platform to execute the rails query )
+      -> rails s ( to start server )
+      -> gem install faker ( to install gem )
+      
             
             
       
