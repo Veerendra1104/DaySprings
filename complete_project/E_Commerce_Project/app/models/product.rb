@@ -7,7 +7,29 @@ class Product < ApplicationRecord
 
     validates :price, numericality: { greater_than_or_equal_to: 3 }
 
+      #  1.checks_aplha numeric
+      validates :name, format: { with: /\A[a-zA-Z0-9]+\z/, message: "Only letters and numbers  are allowed" }
+
+    # 2. Check is_Active usig the acceptance .
+    validates:is_active , acceptance:true
+
+   # 3. If the product is active the product price should be add 
+   validate:price_input_validate
+
+   # 4. If the product is active the product stock should be add s
+    validate:stock_input_validate
+
+    # 5. THe decrption should not allow specials symbols .
+     validates:description, format: { with: /\A[a-zA-Z0-9 ]+\z/, message: "Only letters and numbers  are allowed" }
+
+
+
+
+
+
+
     validate:check_price
+
 
     # Customized Validations
     def check_price
@@ -16,6 +38,27 @@ class Product < ApplicationRecord
             errors.add "Stock is not avaliable ."
         end
     end
+
+    # 3. If the product is active the product price should be add 
+    def price_input_validate
+        if !is_active
+            errors.add(:price, ", First the product should be active to add price .")
+      
+        end
+    end
+
+     # 4. If the product is active the product stock should be add 
+       def stock_input_validate
+        if !is_active
+            errors.add(:stock, ", First the product should be active to add stocks .")
+      
+        end
+    end
+   
+
+
+
+
 
 
     # def self.limit_with_active

@@ -2,7 +2,9 @@ class Customer < ApplicationRecord
   # prewritten validation ( which are in built )
   validates:email, presence: true
   validates:email, uniqueness: true 
-  validates :name, format: { with: /\A[a-zA-Z]+\z/, message: "Only letters are allowed" }
+  #  1.checks_aplha numeric
+ validates :name, format: { with: /\A[a-zA-Z]+\z/, message: "Only letters and numbers  are allowed" }
+ 
 
   # Customized Validation 
 
