@@ -233,7 +233,7 @@
       Note :
             -> The puts methods will not be access without overriding because it is private methods .
             -> The basicObject is only able to acess the private varibales which is fetature of ruby .
-# Day 8 :
+# Day 8 
       * Conditional Statements :
             -> There are used to perform the operations based on the conditions .
             -> There are mainly 3 types 
@@ -315,6 +315,34 @@
             -> Note :
                   * To fetch the private methods , we need to call them in the public method and as the method is public now we can acess them indirectly .
                   * To fetch the protected methods do as similar to above or we can call the in child / sub class public methods and can access them .
+# Day 9:
+      * Note :
+            -> The email validation inbuilt features had came to rails from the version 6
+            -> THe encrypt , decrypt came to rails from version 7 where by using the method by calling the method name inside the models .
+      * Validatores :
+            -> The validations can be done 2 ways :
+                  * From the frontend in html code .
+                  * From the methods in the class .
+            -> There are mainly 2 types 
+                  1. Inbuilt validations :
+                        * Rails has inbuilt validation methods which can be accessed directly inside the models to insert valid data .
+                              -> Example :  validates:email, presence: true
+                                            validates:email, uniqueness: true 
+                                            validates :name, format: { with: /\A[a-zA-Z]+\z/, message: "Only letters and numbers  are allowed" }
+                  2. Custom Validations :
+                        * We can create a methods as our requirement and can be called when ever required .
+                              -> Example : 
+                                          def check_price
+                                                  if stock == 0 && price > 0 
+                                                      # errors.add(:stock,"Stock is not avaliable ." )
+                                                      errors.add "Stock is not avaliable ."
+                                                  end
+                                          end
+                                         * validate:check_price ( To call this method )
+      * Note :
+            -> The during the calling of the inbuilt methods we use the validates .
+            -> THe during the calling of the custom function we need to use the validate .
+                              
 # Commands to remmber :
       -> ruby --version
       -> rails --version 
