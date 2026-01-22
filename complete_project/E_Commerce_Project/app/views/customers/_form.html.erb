@@ -1,4 +1,7 @@
-<%= form_with(model: customer) do |form| %>
+ <%# its a one way of writting form %>
+  <%# 2. form_for
+  3. simple_form %>
+  <%= form_with(model: customer) do |form| %> 
   <% if customer.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
@@ -15,7 +18,7 @@
       <div>
       <%= form.label :name, style: "display: block" %>
         <br>
-      <%= form.text_field :name %>
+      <%= form.text_field :name  , required: true ,  maxlength: 20 , minlength: 4%>
       </div>
      <br>
     <div>
