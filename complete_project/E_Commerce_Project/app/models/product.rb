@@ -53,12 +53,13 @@ class Product < ApplicationRecord
 
     def total_amount 
         # call the  check_availabelity (if true) and then apply_discount use any math(round) method use it  calculate the total .
-        @discount = 0 
-        if check_availabelity == true
-            @discount = apply_discount(price)
-            return @discount
+        discount = 0 
+        if check_availabelity
+            discount = (apply_discount * price).to_i
+          
+            return discount
         else
-            return 0
+            return discount 
         end
 
     end
