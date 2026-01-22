@@ -51,7 +51,7 @@ class Product < ApplicationRecord
        def stock_input_validate
         if !is_active
             errors.add(:stock, ", First the product should be active to add stocks .")
-      
+        end
         end
     end
    
