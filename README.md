@@ -315,7 +315,7 @@
             -> Note :
                   * To fetch the private methods , we need to call them in the public method and as the method is public now we can acess them indirectly .
                   * To fetch the protected methods do as similar to above or we can call the in child / sub class public methods and can access them .
-# Day 9:
+# Day 9
       * Note :
             -> The email validation inbuilt features had came to rails from the version 6
             -> THe encrypt , decrypt came to rails from version 7 where by using the method by calling the method name inside the models .
@@ -342,7 +342,30 @@
       * Note :
             -> The during the calling of the inbuilt methods we use the validates .
             -> THe during the calling of the custom function we need to use the validate .
-                              
+# Day 10 
+      * Scopes :
+            -> THese are only used in the modules which are used to handle the repetative queryies in the databases .
+            -> They return the table records .
+            -> The methods and scopes are similar but different in the use cases 
+                  * Methods :
+                        -> These are mainly used for the cases like methods chaining and repetative .
+                  * Scopes :
+                        -> These are not used for chaining , used where to perform the single oparation on the databases or other collections one time .
+            -> These can be used to perform the both rails query and the sql query .
+                  * Rails query :
+                        ->  scope :out_of_stock, -> { where("stock <= ?", 0) }
+                  * Sql query :
+                        -> scope : test_scope, -> query("Write the required query ") .
+            -> There are mainly two types of scopes 
+                  1 . Non parameterized scope :
+                        ->  scope :out_of_stock, -> { where("stock <= ?", 0) }
+                  2. Parameterized scope :
+                        ->  scope :blacklisted_customers, ->(customer_ids) { where(id: customer_ids) }
+      * The code for the assingment is upload in the Day10 folder .
+      Note :
+            -> <%  %>   --> it is used to embed the ruby code in the html .
+            -> <%=  %>  --> it is used to embed the ruby code in the html and to display in the web page .    
+      
 # Commands to remmber :
       -> ruby --version
       -> rails --version 
