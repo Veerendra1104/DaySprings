@@ -13,11 +13,17 @@ class Customer < ApplicationRecord
   #  1.checks_aplha numeric
  validates :name, format: { with: /\A[a-zA-Z]+\z/, message: "Only letters and numbers  are allowed" }
  
+  #scopes   
+  # scope :unique_emails , ->  { where(email: "veeru@gmail.com").select(:email).distinct }
+
+
+                                        #table_column: pass_reqired_email
+    # scope :unique_emails , ->  { pluck(:email).distinct(:email).where(email: "veeru@gmail.com") }
+
+
+ scope :blacklisted_customers, ->(customer_ids) { where(id: customer_ids) }
 
   # Customized Validation 
-
-
-
   def check_email
     # check email is present or not .
     if email == nil

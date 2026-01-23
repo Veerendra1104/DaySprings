@@ -13,7 +13,7 @@
 
     align-items: center;
     justify-items: center;
-
+    
 
 
 
@@ -22,13 +22,14 @@
 .table_cts {
 
     width: 70%;
-    border-collapse: collapse;
+    
     margin-top: 10px;
     padding: 30px;
     text-align: center;
     vertical-align: middle;
+    border-collapse: collapse;
+  
 
-    border-radius: 30px;
 
 
     th {
@@ -73,16 +74,17 @@
 
 .form_to_insert {
     border-radius: 10px;
-    box-shadow: 5px 5px rgb(85, 85, 85);
+    box-shadow: 5px 5px 5px 5px rgb(67, 69, 67);
     display: flex;
     flex-direction: column;
     height: 500px;
-    width: 400px;
-    text-align: center;
+    width: 700px;
+    text-align: left;
     align-items: center;
     justify-content: center;
-    margin-left: 35%;
-    background-color: lightgrey;
+    margin-left: 30%;
+    background-color: white;
+    padding: 30px;
 
 
 
@@ -98,13 +100,31 @@
 }
 
 .form_to_insert input[type="text"] {
-    height: 10px;
-    width: 100%;
+    height: 50px;
+    width: 400px;
     padding: 10px;
     border-radius: 10px;
     border: 2px solid black;
 
 }
+
+.form_to_insert input[type="number"] {
+    height: 50px;
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+
+}
+
+.form_to_insert input[type="checkbox"] {
+    
+    margin-left: 50px;
+    border-radius: 10px;
+    border: 2px solid black;
+
+}
+
 
 .form_to_insert input[type="submit"] {
     border-radius: 10px;
@@ -125,7 +145,7 @@
     align-items: center;
     justify-items: center;
    margin-left: 100px;
-   margin-top: 60px;
+   margin-top: 30px;
    padding-top: 8px;
    padding-left: 9px;
        

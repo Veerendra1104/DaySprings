@@ -17,6 +17,7 @@
      </head>
 
      <tbody>
+       <%# <% @customers = @customers.unique_emails %> 
        <% @customers.each do |customer| %>
        <tr>
         <td> <%= customer.name %> </td>

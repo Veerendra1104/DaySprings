@@ -21,21 +21,23 @@ class Product < ApplicationRecord
 
     # 5. THe decrption should not allow specials symbols .
      validates:description, format: { with: /\A[a-zA-Z0-9 ]+\z/, message: "Only letters and numbers  are allowed" }
+     validate:check_price
+
+
+    #  scopes 
+    scope :out_of_stock, -> { where("stock <= ?", 0) }
+    # for sql query 
+    # scope :test_scope , -> query("You can write query here .")
 
 
 
-
-
-
-
-    validate:check_price
 
 
     # Customized Validations
     def check_price
         if stock == 0 && price > 0 
-            # errors.add(:stock,"Stock is not avaliable ." )
-            errors.add "Stock is not avaliable ."
+            errors.add(:stock,"Stock is not avaliable ." )
+            # errors.add "Stock is not avaliable ."
         end
     end
 
@@ -49,11 +51,11 @@ class Product < ApplicationRecord
 
      # 4. If the product is active the product stock should be add 
        def stock_input_validate
-        if !is_active
-            errors.add(:stock, ", First the product should be active to add stocks .")
-        end
-        end
-    end
+            if !is_active
+                errors.add(:stock, ", First the product should be active to add stocks .")
+            end
+         end
+
    
 
 
