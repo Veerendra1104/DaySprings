@@ -3,11 +3,13 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
+  
     @products = Product.all
   end
 
   # GET /products/1 or /products/1.json
   def show
+    raise params.inspect
   end
 
   # GET /products/new
@@ -18,6 +20,11 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
   end
+
+  def out_of_stock    
+   @products = Product.out_of_stock
+  end 
+
 
   # POST /products or /products.json
   def create
@@ -60,6 +67,7 @@ class ProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
+      raise params.inspect
       @product = Product.find(params.expect(:id))
     end
 
@@ -67,4 +75,7 @@ class ProductsController < ApplicationController
     def product_params
       params.expect(product: [ :name, :description, :price, :stock, :is_active ])
     end
+
+
+  
 end

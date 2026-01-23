@@ -20,6 +20,9 @@ class Customer < ApplicationRecord
                                         #table_column: pass_reqired_email
     # scope :unique_emails , ->  { pluck(:email).distinct(:email).where(email: "veeru@gmail.com") }
 
+    # Get distinct emails 
+    scope :give_unique_emails_users, -> { select(:email).distinct }
+
 
  scope :blacklisted_customers, ->(customer_ids) { where(id: customer_ids) }
 

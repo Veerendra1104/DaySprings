@@ -21,6 +21,11 @@ class CustomersController < ApplicationController
   def edit
   end
 
+  def blacklisted_customers
+    @list_of_blocked = [1, 5, 6]
+    @customers = Customer.blacklisted_customers(@list_of_blocked)
+  end
+
   # POST /customers or /customers.json
   def create
     @customer = Customer.new(customer_params)
@@ -69,4 +74,6 @@ class CustomersController < ApplicationController
     def customer_params
       params.expect(customer: [ :name, :email ])
     end
+
+   
 end
