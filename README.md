@@ -2,7 +2,10 @@
 # Day 1
       # Ruby 
             Ruby is the dynamically typed, open source programming language with an simplicity and productivity .
-            -> Every thing is stored in the format of the object .
+            -> The ruby is founded by yokiro "Matz".
+            -> 1995 - ruby released .
+               2006 - ruby becomes popular ( reason rails discovered ) .
+            -> Ruby is 100% object oriented and  every thing is stored in the format of the object .
             -> Latest version is : #3
             -> It's follow the solid principles except I .
       # Rails 
@@ -17,6 +20,13 @@
                   1. rails new project_name 
                   2. rails new createapionly ( For specificaly : Example if required two teir )
                   3. Scalefold ( It auto sets Controller and others for mvc )
+      # Note :
+            -> Flow Order :
+                  Ruby code -> Interpretor -> objects -> output .
+                  * Its executes top to bottom .
+            -> TH methods are executed only when they are called .
+            -> only false and nill are false 
+                  everything else is thruthly .
 # Day2
       * Project with Postgresql
             * There are mainly 3 cmds used 
@@ -192,10 +202,11 @@
                   * until loop :
                         -> This runs the loop untill the condtion becomes true .
       * In built methods for Collections :
-            1. each : The method which is used to acess the each element in the array or thers .
-            2. select : This method which is used achive the specific condition which are eligible for the condtion those are fetched .
-            3. reject : This method which is used achive the specific condition which are eligible for the condtion those are fetched .
-            4. map , collect : These are same methods which is used to iterate through each value and acess them .
+            -> These are present in the enumerable module which are inbuilt 
+                  1. each : The method which is used to acess the each element in the array or thers .
+                  2. select : This method which is used achive the specific condition which are eligible for the condtion those are fetched .
+                  3. reject : This method which is used achive the specific condition which are eligible for the condtion those are fetched .
+                  4. map , collect : These are same methods which is used to iterate through each value and acess them .
       Note :
             * These methods does not effect arrays , the arrays remains same .
             * If we need to modify the array then use ! after the method 
@@ -215,6 +226,9 @@
             -> The class name should be write in the Camel Case , Example : CustomController .
       * Methods :
             -> THe method or variable name sould be in the snake clase , Example : limit_active .
+            -> THere are mainly 2 types are methods which are majorly used :
+                  1. Predicate method : The method which returns only either true or false .
+                  2. Bang method : The normaly the methods does not change their original data but using the "!" symbol we can make original data to change .
       * Inheritance :
             * Its allows only single level inheritance .
             * The super keyword is used to access the parents method and variables .
@@ -321,8 +335,8 @@
             -> THe encrypt , decrypt came to rails from version 7 where by using the method by calling the method name inside the models .
       * Validatores :
             -> The validations can be done 2 ways :
-                  * From the frontend in html code .
-                  * From the methods in the class .
+                  * From the frontend in html code ( which checks during the entry of data if valid then inserts otherwise not . ) .
+                  * From the methods in the class ( which checks inside the rails methods after data came from front end . ) .
             -> There are mainly 2 types 
                   1. Inbuilt validations :
                         * Rails has inbuilt validation methods which can be accessed directly inside the models to insert valid data .
