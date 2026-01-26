@@ -50,6 +50,40 @@
         Note :
                 -> The every model inherit the ActiveRecord class and performs the operations as the contains inbuilt methods .
 
+#   Loops :
+        In rails loops are mostly used for :
+                -> Iterate DBrecords .
+                -> Render list in views .
+                -> Process data in modoles .
+                -> Run bulk operations .
+
+#   Some of the scopes on Products .
+
+#   Checks where is active or no 
+        scope :active -> { where(active: true ) }
+        scope :inactive -> { where(active: false) }
+#   Status based scopes on orders 
+        scope :pending -> { where(status: 'pending') }
+        scope :fulfilled -> { where(status: 'fulfilled') }
+        scope :rejected -> { where(status: 'rejected') }
+
+#   Get the latest 5 orders 
+        scope :latest ->(val) { order(created_at: :desc).limit(val) }
+#   Get the product search 
+        scope :search -> (query) { where("name Ilike ?", "%#{query}%")  }
+#   Get the order recent 
+        scope :recent -> { order(created: :desc) }
+#   Get the product between prices
+        scope :price_between -> (min, max) {where(price: min..max)}
+#   Sort tables 
+        scope :sort_by_price -> {  order(price: :desc) }
+        scope :sort_by_name -> { order(name: :desc) }
+
+#   Product with active , min-max and recent order
+        Product.active.price_between(200, 300).recent .
+
+                
+
         
 
 
