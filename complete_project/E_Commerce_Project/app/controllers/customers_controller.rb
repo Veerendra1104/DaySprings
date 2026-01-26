@@ -22,8 +22,8 @@ class CustomersController < ApplicationController
   end
 
   def blacklisted_customers
-    @list_of_blocked = [1, 5, 6]
-    @customers = Customer.blacklisted_customers(@list_of_blocked)
+    list_of_blocked = [1, 5, 6]
+    @customers = Customer.blacklisted_customers(list_of_blocked)
   end
 
   # POST /customers or /customers.json

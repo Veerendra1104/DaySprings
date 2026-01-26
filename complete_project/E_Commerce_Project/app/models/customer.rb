@@ -11,7 +11,7 @@ class Customer < ApplicationRecord
 
 
   #  1.checks_aplha numeric
- validates :name, format: { with: /\A[a-zA-Z]+\z/, message: "Only letters and numbers  are allowed" }
+ validates :name, format: { with: /\A[a-zA-Z0-9]+\z/, message: "Only letters and numbers  are allowed" }
  
   #scopes   
   # scope :unique_emails , ->  { where(email: "veeru@gmail.com").select(:email).distinct }
@@ -21,10 +21,13 @@ class Customer < ApplicationRecord
     # scope :unique_emails , ->  { pluck(:email).distinct(:email).where(email: "veeru@gmail.com") }
 
     # Get distinct emails 
-    scope :give_unique_emails_users, -> { select(:email).distinct }
+    # scope :give_unique_emails_users, -> { select(:email).distinct }
 
 
- scope :blacklisted_customers, ->(customer_ids) { where(id: customer_ids) }
+    scope :blacklisted_customers, ->(customer_ids) { where(id: customer_ids) }
+
+    # Scope to get the distinct emails users .
+    scope :give_unique_emails_users, -> { select("distinct ON (email) customers.* ").order(:email, :id)}
 
   # Customized Validation 
   def check_email
