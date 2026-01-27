@@ -8,9 +8,9 @@ class ProductsController < ApplicationController
   end
 
   # GET /products/1 or /products/1.json
-  def show
-    raise params.inspect
-  end
+   def show
+   end
+   #raise params.inspect
 
   # GET /products/new
   def new
@@ -66,8 +66,7 @@ class ProductsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      raise params.inspect
+    def set_product      
       @product = Product.find(params.expect(:id))
     end
 

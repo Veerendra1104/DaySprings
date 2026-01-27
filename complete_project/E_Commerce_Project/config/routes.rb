@@ -6,6 +6,10 @@ Rails.application.routes.draw do
       get 'out_of_stock'
     end
   end
+
+  #  To see by skiping show route Output : it doesnot works .
+  # resource :products, skip:[:show]
+  
   resources :customers do
       collection do
         get 'blacklisted_customers'
