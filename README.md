@@ -378,7 +378,34 @@
       * The code for the assingment is upload in the Day10 folder .
       Note :
             -> <%  %>   --> it is used to embed the ruby code in the html .
-            -> <%=  %>  --> it is used to embed the ruby code in the html and to display in the web page .    
+            -> <%=  %>  --> it is used to embed the ruby code in the html and to display in the web page .  
+#   Day11  
+      -> Republic holiday revision .
+#   Day12 
+      * Components :
+            -> The rails provides the many components which contains the many inbuilt methods or operations simplifyies the code .
+            -> The different types of components are listed in the Day12 readme.md .
+      * ActivePack :
+            -> The using this component which provides the views by genrating the controllers .
+                  Example :
+                        * CMD : rails g controller admin .
+                        -> This generates the admin controller and also the admin views .
+      * Command to add the new column to the product .
+            -> rails g migartion AddMobToProduct mob:bigint .
+            -> rails db:migrate .
+            -> This will add the new column to the existing table .
+            Note :
+                  -> To remove 
+                        rails g migration RemoveFromCustomers mob:bigint .
+      * Routes config :
+            1. To skip the routes we can use the following command 
+                  resources :products, except: [:show]
+            2. To only use the specific 
+                  resources :products, only: [:edit, :destroy]
+
+
+
+
       
 # Commands to remmber :
       -> ruby --version
