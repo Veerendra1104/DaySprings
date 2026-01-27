@@ -27,6 +27,27 @@
                                                                                                 asyncrhonous websockets .
                 11.Inbuilt                              ActiveStorage                         -It earlier the images, blobs
                                                                                                 are not directly stored in databse it reuired some plugins but after version 6 the activeStorage allows it .
-                                                         
+
+#   Assingment 
+        1. If routes with except route for the route it will show following error
+                CMD : resources :products, except: [:show]
+                Exceptions : Nor route matches GET "/products/19" .
+        2. By deleting or removing the show methods in controller then
+                Exceptions : ProductController#show not found . 
+        3. if we delete show.html.erb then 
+                Exception : ActionController::UnknownFormat in ProductController#show .
+        4. if we use only then it will work for those routes 
+                CMD : resourse:products, only:[:edit, :destory]
+        5. Adding the column to the existing table 
+                CMD : rails g migrations AddMobToCustomer mob:bigint
+                rails db:migrate
+                -> THe mob added to the table .
+        6. By using the controller generate cmd it also generate the views .
+                rails g controller admin
+                -> it generates the admin views also with the controller .
+         
+
+                              
+                             
 
                 

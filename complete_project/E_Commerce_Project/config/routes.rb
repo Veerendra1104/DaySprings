@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   end
 
   #  To see by skiping show route Output : it doesnot works .
-  # resource :products, skip:[:show]
+  
+  # resources :products, except: [:show]
+
+  # resources :products, only: [:edit, :destroy]
   
   resources :customers do
       collection do
