@@ -1,8 +1,9 @@
 class Product < ApplicationRecord
+    has_rich_text:description
   # prewritten validation ( which are in built )
     validates:stock, numericality: true
     validates:stock, length: { minimum: 1, maximum: 20 }
-    validates:description, length: { maximum: 500 }  
+    # validates:description, length: { maximum: 500 }  
     # validates:price , numericality: true
 
     validates :price, numericality: { greater_than_or_equal_to: 3 }
@@ -20,7 +21,7 @@ class Product < ApplicationRecord
     validate:stock_input_validate
 
     # 5. THe decrption should not allow specials symbols .
-     validates:description, format: { with: /\A[a-zA-Z0-9 ]+\z/, message: "Only letters and numbers  are allowed" }
+    #  validates:description, format: { with: /\A[a-zA-Z0-9 ]+\z/, message: "Only letters and numbers  are allowed" }
      validate:check_price
 
 

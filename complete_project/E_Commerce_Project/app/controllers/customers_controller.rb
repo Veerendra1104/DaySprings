@@ -3,6 +3,7 @@ class CustomersController < ApplicationController
 
   # GET /customers or /customers.json
   def index
+ 
     # @list_of_customers = [1, 2, 3]
     # @customers = Customer.blacklisted_customers(@list_of_customers)
     @customers = Customer.all
@@ -10,11 +11,13 @@ class CustomersController < ApplicationController
 
   # GET /customers/1 or /customers/1.json
   def show
+     
     # rails params.inspect   ( This is used in debugging . )
   end
 
   # GET /customers/new
   def new
+    
     @customer = Customer.new
   end
 

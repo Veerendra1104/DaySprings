@@ -3,7 +3,9 @@
 <div class="customer-card">
 <%= render @product %>
 
+
   <div class="card-actions">
+  <%= @product.description  %>
   <%= link_to "Edit this product", edit_product_path(@product), class: "btn edit-btn" %> |
   <%= link_to "Back to products", products_path, class: "btn back-btn" %>
 
