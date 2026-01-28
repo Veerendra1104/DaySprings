@@ -1,4 +1,5 @@
 class Customer < ApplicationRecord
+  has_rich_text:about_me
   # prewritten validation ( which are in built )
   validates:email, presence: true
   validates:email, uniqueness: true 

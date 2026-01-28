@@ -26,7 +26,18 @@
       <br>
       <%= form.text_field :email %>
     </div>
-      <br> 
+      <br>
+
+         <div>
+      <%= form.label :about_me, style: "display: block" %>
+        <br>
+      <%= form.rich_text_area :about_me  %>
+      </div>
+     <br>
+
+
+
+
     <div>
       <%= form.submit %>
     </div>

@@ -3,6 +3,9 @@
 <div class="customer-card">
   <%= render @customer %>
 
+  <p> <%=  @customer.about_me %> </p>
+
+
   <div class="card-actions">
     <%= link_to "Edit", edit_customer_path(@customer), class: "btn edit-btn" %>
     <%= link_to "Back", customers_path, class: "btn back-btn" %>

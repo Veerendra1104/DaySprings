@@ -11,6 +11,7 @@
     <tr>
       <th> Name  </th>
       <th> Email </th>
+      <th> About Me  </th>
       <th> View  </th>
       </tr> 
     
@@ -22,6 +23,12 @@
        <tr>
         <td> <%= customer.name %> </td>
         <td> <%= customer.email %> </td>
+         <td> <%= if customer.about_me.nil?
+                    "-"
+                  else 
+                    customer.about_me
+                  end %>  </td>
+         
         <td >  <%= link_to "Show this customer", customer, class: "show-customer-link"  %> </td>
        </tr> 
       
