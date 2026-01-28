@@ -9,9 +9,9 @@
                                                                                              object .
                 2. Controllers                          ActionController                   -It provides the ibuilt methods for curd
                                                                                              opertaions .                            
-                3. Views                                Action                              -it provides the inbuilt files to perform 
+                3. Views                                ActionView                          -it provides the inbuilt files to perform 
                                                                                              operations .
-                4. Views                                ActionText                          -It provides the form methods or attributes .
+                4. Views                                ActionText                          -Used for rich text content .
                 5. Routes                               Action Dispatcher                   -It provides the ibuilt routes specifications .
                 6. Views and Controllers                ActionPack                          -It synces the controller and the views by 
                                                                                              generating controller it provides views .
@@ -26,7 +26,23 @@
                 10. Network                             ActionCables                          -It is used to achieve syncrhonous and 
                                                                                                 asyncrhonous websockets .
                 11.Inbuilt                              ActiveStorage                         -It earlier the images, blobs
-                                                                                                are not directly stored in databse it reuired some plugins but after version 6 the activeStorage allows it .
+                                                                                                are not directly stored in databse it reuired some plugins but                                                                                                         after version 6 the activeStorage allows it .
+# Which component does what 
+        CRUD → ActiveRecord        
+        Validations → ActiveModel        
+        Forms → ActionView        
+        Params → ActionController        
+        Routes → ActionDispatch        
+        Helpers → ActionView        
+        Background jobs → ActiveJob        
+        WebSockets → ActionCable
+# Rails Request Flow (VERY IMPORTANT)
+        Browser
+         → Routes (ActionDispatch)
+         → Controller (ActionController)
+         → Model (ActiveRecord)
+         → View (ActionView)
+         → Response
 
 #   Assingment 
         1. If routes with except route for the route it will show following error
