@@ -402,11 +402,42 @@
                   resources :products, except: [:show]
             2. To only use the specific 
                   resources :products, only: [:edit, :destroy]
-
-
-
-
+#   Day13 
+      * ActionText
+            -> Installation steps of ActionText
+            -> ActionText is built-in starting from Rails 6.0      
+      * Run the command :
+             -> rails action_text:install
       
+      * Run migrations rails
+            -> db:migration
+      
+      
+      * Files created in the project after installing ActionText:
+            app/assets/stylesheets/actiontext.css (newly created)
+            app/javascript/application.js (updated)
+            projectDb/app/views/active_storage/blobs/_blob.html.erb (newly created)
+            projectDb/app/views/layouts/action_text/contents/_content.html.erb (newly created)
+            projectDb/config/importmap.rb (updated)
+            projectDb/db/migrate/20260128045538_create_active_storage_tables.active_storage.rb (newly created)
+            projectDb/db/migrate/20260128045539_create_action_text_tables.action_text.rb (newly created)
+            projectDb/test/fixtures/action_text/rich_texts.yml (newly created)
+            
+            File changes after migration.
+            schema.rb (updated)
+      
+      * Steps to add a ActionText column to a table.
+            -> ActionText does not add a column into an existing table, instead it creates its own table and associaltes it with model.
+      
+            -> Add has_rich_text to existing model
+                  In the cutomer/product.rb file, add --> has_rich_text :col_name
+      
+            -> Permit the rich text Attribute (controller)
+                  In the controller files, update the private method modelname_params() by adding the col_name.
+      
+            -> Update the form to use rich_text_area      
+                  <%= f.label :col_name%>      
+                  <%= f.rich_text_area :col_name %>      
 # Commands to remmber :
       -> ruby --version
       -> rails --version 
