@@ -17,7 +17,7 @@ class CustomersController < ApplicationController
 
   # GET /customers/new
   def new
-      raise params.inspect
+      # raise params.inspect
     @customer = Customer.new
   end
 
@@ -77,7 +77,7 @@ class CustomersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def customer_params
-      params.expect(customer: [ :name, :email , :about_me, :profile_photo])
+      params.expect(customer: [ :name, :email , :about_me, :profile_photo, :dob, :mob])
     end
 
    

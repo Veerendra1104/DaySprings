@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
     has_rich_text:description
     has_many_attached:product_images
-
+    has_one_attached:invoice
 
 
 

@@ -29,6 +29,21 @@
       <br>
 
       <div>
+      <%= form.label :dob, style: "display: block" %> 
+      <br>
+      <%= form.date_field :dob %>
+    </div>
+      <br>
+
+     <div>
+      <%= form.label :mob, style: "display: block" %> 
+      <br>
+      <%= form.number_field :mob %>
+    </div>
+      <br>
+
+
+      <div>
       <%= form.label :about_me, style: "display: block" %>
         <br>
       <%= form.rich_text_area :about_me  %>

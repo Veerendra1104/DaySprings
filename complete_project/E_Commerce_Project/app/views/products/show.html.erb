@@ -9,16 +9,28 @@
 <% if @product.product_images.attached? %>
 <% @product.product_images.each do |product_image| %>
   <%= image_tag url_for(product_image), alt: "Profile Picture" %>
-  <% end  %>
+
 <% end %>
 
-
+<% end  %>
 </p>
 
-
+<p>
+  <% if @product.invoice.attached? %>
+  <p>
+        <embed src="<%= url_for(@product.invoice) %>"
+         type="application/pdf"
+         width="100%"
+         height="600px">
+    </p>
+  <% else  %>
+  <p> No file is present   </p>
+  <% end  %>
+        
+</p>
 
   <div class="card-actions">
-  <%= @product.description  %>
+
   <%= link_to "Edit this product", edit_product_path(@product), class: "btn edit-btn" %> |
   <%= link_to "Back to products", products_path, class: "btn back-btn" %>
 

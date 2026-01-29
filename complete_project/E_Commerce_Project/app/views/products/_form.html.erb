@@ -35,6 +35,11 @@
     <%= form.file_field :product_images, multiple:true %>
   </div>
 
+   <div>
+    <%= form.label :invoice, style: "display: block" %>
+    <%= form.file_field :invoice %>
+  </div>
+
   <div>
     <%= form.label :stock, style: "display: block" %>
     <%= form.number_field :stock %>
