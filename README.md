@@ -402,7 +402,6 @@
                   resources :products, except: [:show]
             2. To only use the specific 
                   resources :products, only: [:edit, :destroy]
-#   Day13 
 
 
 
