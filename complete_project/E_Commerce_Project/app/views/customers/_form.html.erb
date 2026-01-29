@@ -28,12 +28,20 @@
     </div>
       <br>
 
-         <div>
+      <div>
       <%= form.label :about_me, style: "display: block" %>
         <br>
       <%= form.rich_text_area :about_me  %>
       </div>
      <br>
+
+      <div>
+      <%= form.label :profile_photo, style: "display: block" %>
+        <br>
+      <%= form.file_field :profile_photo  %>
+      </div>
+     <br>
+
 
 
 

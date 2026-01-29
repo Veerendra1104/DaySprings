@@ -27,13 +27,8 @@
                   else
                       product.description
                   end              
-              %>
-
-            
-              
-
-             
-            </p>
+              %>       
+           </p>
 
             <p class="mb-1">
               <strong>Price:</strong> ₹<%= product.price %>
@@ -43,6 +38,24 @@
               <strong>Stock:</strong> <%= product.stock %>
             </p>
 
+              <div >
+              
+              
+               <% if product.product_images.attached? %>  
+               <%  product.product_images.each do |product_image| %>
+                <div class="images" >
+                     <%= image_tag url_for(product_image), alt: "Product Pictures"  %>   
+                </div>
+                 <% end  %> 
+             
+                  <% else  %> 
+                  <p> No Product Photo </p>
+                  <% end %>
+              </div>   
+
+
+
+
             <p>
               <strong>Status:</strong>
               <span class="badge <%= product.is_active ? 'bg-success' : 'bg-danger' %>">
@@ -50,6 +63,10 @@
               </span>
             </p>
           </div>
+
+
+
+
 
           <div class="card-footer bg-transparent border-top-0">
             <%= link_to "View Product", product, class: "btn btn-primary w-100" %>

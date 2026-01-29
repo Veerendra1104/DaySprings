@@ -12,6 +12,7 @@
       <th> Name  </th>
       <th> Email </th>
       <th> About Me  </th>
+      <th> Image  </th>
       <th> View  </th>
       </tr> 
     
@@ -27,7 +28,24 @@
                     "-"
                   else 
                     customer.about_me
-                  end %>  </td>
+                  end %> 
+           </td>
+
+             <td>
+              
+              
+               <% if customer.profile_photo.attached? %>  
+               <% if customer.profile_photo.image? %>
+                <div  class="photo">
+                     <%= image_tag url_for(customer.profile_photo), alt: "Profile Picture" , size:"150x200" %>   
+                </div>
+                 <% else  %> 
+                  <p>The uploaded file is not image . </p>
+                  <% end %>
+                  <% else  %> 
+                  <p> No Profile Photo </p>
+                  <% end %>
+              </td>        
          
         <td >  <%= link_to "Show this customer", customer, class: "show-customer-link"  %> </td>
        </tr> 
