@@ -11,13 +11,13 @@ class CustomersController < ApplicationController
 
   # GET /customers/1 or /customers/1.json
   def show
-     
+   
     # rails params.inspect   ( This is used in debugging . )
   end
 
   # GET /customers/new
   def new
-    
+      raise params.inspect
     @customer = Customer.new
   end
 

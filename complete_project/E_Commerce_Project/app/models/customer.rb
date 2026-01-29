@@ -8,7 +8,7 @@ class Customer < ApplicationRecord
 
 
 # validations for Customer profile_photo
-validates :profile_photo, attached: true, content_type: ['image/png', 'image/jpeg'], size: { less_than: 2.megabytes, message: 'is too large' }
+# validates:profile_photo, attached: true, content_type: ['image/png', 'image/jpeg'], size: { less_than: 2.megabytes, message: 'is too large' }
 
 
 
