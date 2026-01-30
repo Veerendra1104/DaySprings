@@ -402,9 +402,70 @@
                   resources :products, except: [:show]
             2. To only use the specific 
                   resources :products, only: [:edit, :destroy]
+#   Day13
+      * ActionText
+            -> Installation steps of ActionText
+            -> ActionText is built-in starting from Rails 6.0      
+      * Run the command :
+            -> rails action_text:install
+      
+      * Run migrations rails
+            -> db:migration
+      
+      
+      * Files created in the project after installing ActionText:
+            app/assets/stylesheets/actiontext.css (newly created)
+            app/javascript/application.js (updated)
+            projectDb/app/views/active_storage/blobs/_blob.html.erb (newly created)
+            projectDb/app/views/layouts/action_text/contents/_content.html.erb (newly created)
+            projectDb/config/importmap.rb (updated)
+            projectDb/db/migrate/20260128045538_create_active_storage_tables.active_storage.rb (newly created)
+            projectDb/db/migrate/20260128045539_create_action_text_tables.action_text.rb (newly created)
+            projectDb/test/fixtures/action_text/rich_texts.yml (newly created)
+            
+            File changes after migration.
+            schema.rb (updated)
+      
+      * Steps to add a ActionText column to a table.
+            -> ActionText does not add a column into an existing table, instead it creates its own table and associaltes it with model.
+      
+            -> Add has_rich_text to existing model
+                  In the cutomer/product.rb file, add --> has_rich_text :col_name
+      
+            -> Permit the rich text Attribute (controller)
+                  In the controller files, update the private method modelname_params() by adding the col_name.
+      
+            -> Update the form to use rich_text_area      
+                  <%= f.label :col_name%>      
+                  <%= f.rich_text_area :col_name %>      
 
+#   Day14 
+      * Active Storage 
+            -> It used to handle the files content with out storing the extra data in tables , there creates new table and match with primary keys .
+            -> It is mainly used to store the images , files , pdf's, others 
+            -> TO perform we need to install ActionStorage .
+            The code and the assignment updated in Day14 readme .
+      * Storage 
+            -> The storage can be locally or cloud storage .
+            -> For the specific cloud storage we need specific gem to install .
+                  * aws -> aws gem .
+                  * GCS -> Gcs gem .
+            -> Steps to do for specific cloud storage .  
+                  1. install acitve Stoorage .
+                  2. rails db: migrate .
+                  3. storage,yml (we need to configure which storage to use )
+            -> In the environment we call the storage.yml  we can use  the different storages for the env .
 
-
+      * Order to write in model 
+            -> ActiveText related .
+            -> ActionStorage.
+            -> Scope Validations .
+            -> Assocition .
+            -> These steps are not compulsory but which maintains an orders which can be analyzed the project .
+      * Styling 
+            -> We can do two ways of styling 
+                  1. Using the html tags .
+                  2. The gems like ImageProcessing and carrierweb which provides the styles can be applied simliar like validations .
 
       
 # Commands to remmber :
