@@ -18,6 +18,9 @@ Rails.application.routes.draw do
         get 'blacklisted_customers'
       end
     end
+
+    # order routes 
+    resources :orders
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
