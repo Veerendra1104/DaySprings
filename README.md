@@ -468,43 +468,50 @@
                   2. The gems like ImageProcessing and carrierweb which provides the styles can be applied simliar like validations .
 
 #   Day15
-   **ActionMailer**
-      * Action Mailer allows you to send emails from your Rails application. It's one of the two email related components in the Rails framework
+      *ActionMailer**
+            -> Action Mailer allows you to send emails from your Rails application. It's one of the two email related components in the Rails framework
 
-   **Steps to Do**
-      * Generate the mailer name using the following command 
-            -> rails generate mailer mailername 
-            -> rails db:migrate
-      * It will generate the some of the files 
-            -> demp-app\app\mailers\customer_mailer.rb
-            -> demp-app\app\views\customer_mailer
-            -> demp-app\test\mailers\previews\customer_mailer_preview.rb
-            -> demp-app\test\mailers\customer_mailer_test.rb
-      * We need to add the cmd in the application.rb
-            -> require "action_mailer/railtie" 
-      * we need to configure in the development.rb
-            -> config.action_mailer.perform_deliver = true
-            -> config.action_mailer.delivery_method = smtp  
-      * But here we are using the  letter_opener
-            -> config.action_mailer.delivery_method = letter_opener 
-      * add the route 
-            -> if Rails.env.development? 
-                  mount LetterOpenerWeb::Engine, at:"/letter_open
-                  end
-      * config the mailer method and html page 
-            -> class CustomerMailer < ApplicationMailer 
-                      def welcome_email 
-                          @customer = params[:customer]
-                        mail(
-                        to: @customer.email,
-                        subject:"Welcome to app"
-                         )
-                      end
-                    end  
-      * Now if the user is created then make configure to send the mail .
+      * Steps to Do
+            1. Generate the mailer name using the following command 
+                  -> rails generate mailer mailername 
+                  -> rails db:migrate
+            2. It will generate the some of the files 
+                  -> demp-app\app\mailers\customer_mailer.rb
+                  -> demp-app\app\views\customer_mailer
+                  -> demp-app\test\mailers\previews\customer_mailer_preview.rb
+                  -> demp-app\test\mailers\customer_mailer_test.rb
+            3. We need to add the cmd in the application.rb
+                  -> require "action_mailer/railtie" 
+            4. we need to configure in the development.rb
+                  -> config.action_mailer.perform_deliver = true
+                  -> config.action_mailer.delivery_method = smtp  
+            5. But here we are using the  letter_opener
+                  -> config.action_mailer.delivery_method = letter_opener 
+            6. add the route 
+                  -> if Rails.env.development? 
+                        mount LetterOpenerWeb::Engine, at:"/letter_open
+                        end
+            7.config the mailer method and html page 
+                  -> class CustomerMailer < ApplicationMailer 
+                            def welcome_email 
+                                @customer = params[:customer]
+                              mail(
+                              to: @customer.email,
+                              subject:"Welcome to app"
+                               )
+                            end
+                          end  
+            8. Now if the user is created then make configure to send the mail .
                   -> if @customer.save
                   CustomerMailer.with(customer: @customer).welcome_email.deliver 
-
+#   Day16
+      * Action MailBox 
+            -> The mail box is used for the inbound mails use to handle the mails and view them .
+      * THe steps are mentioned in the Day16 readme .
+      * The commands to know :
+            -> rails action_mailbox:install .
+            -> rails db:migrate.
+            -> rails g mailbox support ( generate the mailbox to handle . )          
 
 # Commands to remmber :
       -> ruby --version
