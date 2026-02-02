@@ -467,7 +467,10 @@
                   1. Using the html tags .
                   2. The gems like ImageProcessing and carrierweb which provides the styles can be applied simliar like validations .
 
-      
+#   Day15
+**ActionMailer**
+
+
 # Commands to remmber :
       -> ruby --version
       -> rails --version 
