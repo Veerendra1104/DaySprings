@@ -473,37 +473,37 @@
 
    **Steps to Do**
       1. Generate the mailer name using the following command 
-            ``` rails generate mailer mailername ```
-            ``` rails db:migrate ```
+            rails generate mailer mailername 
+            rails db:migrate
       2. It will generate the some of the files 
-            ``` demp-app\app\mailers\customer_mailer.rb ```
-            ``` demp-app\app\views\customer_mailer ```
-           ``` demp-app\test\mailers\previews\customer_mailer_preview.rb ```
-           ``` demp-app\test\mailers\customer_mailer_test.rb ```
+            demp-app\app\mailers\customer_mailer.rb
+            demp-app\app\views\customer_mailer
+            demp-app\test\mailers\previews\customer_mailer_preview.rb
+            demp-app\test\mailers\customer_mailer_test.rb
       3. We need to add the cmd in the application.rb
-            ``` require "action_mailer/railtie" ```
+            require "action_mailer/railtie" 
       4. we need to configure in the development.rb
-            ``` config.action_mailer.perform_deliver = true ```
-            ``` config.action_mailer.delivery_method = smtp  ```
-            But here we are using the  letter_opener
-            ``` config.action_mailer.delivery_method = letter_opener  ``
+            config.action_mailer.perform_deliver = true
+            config.action_mailer.delivery_method = smtp  
+      But here we are using the  letter_opener
+          config.action_mailer.delivery_method = letter_opener 
       5. add the route 
-            ```if Rails.env.development? ```
-            ```mount LetterOpenerWeb::Engine, at:"/letter_opener"```
-            ```end  ```
+            if Rails.env.development? 
+            mount LetterOpenerWeb::Engine, at:"/letter_open
+            end
       6. config the mailer method and html page 
-            ```  class CustomerMailer < ApplicationMailer ```
-                  ```    def welcome_email ```
-                  ```        @customer = params[:customer]```
-                  ```      mail(```
-                  ```      to: @customer.email,```
-                  ```      subject:"Welcome to app"```
-                  ```       )```
-                  ```    end```
-                  ```  end  ```
+            class CustomerMailer < ApplicationMailer 
+                      def welcome_email 
+                          @customer = params[:customer]
+                        mail(
+                        to: @customer.email,
+                        subject:"Welcome to app"
+                         )
+                      end
+                    end  
       7. Now if the user is created then make configure to send the mail .
-                  ```  if @customer.save```
-                  ```CustomerMailer.with(customer: @customer).welcome_email.deliver ```
+                  if @customer.save
+                  CustomerMailer.with(customer: @customer).welcome_email.deliver 
 
 
 # Commands to remmber :
