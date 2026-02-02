@@ -44,7 +44,7 @@
                <% if product.product_images.attached? %>  
                <%  product.product_images.each do |product_image| %>
                 <div class="images" >
-                     <%= image_tag url_for(product_image), alt: "Product Pictures"  %>   
+                     <%= image_tag url_for(product_image), alt: "Product Pictures" , size:"380x250" %>   
                 </div>
                  <% end  %> 
              

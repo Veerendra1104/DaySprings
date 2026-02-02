@@ -8,7 +8,7 @@
     
 <% if @product.product_images.attached? %>
 <% @product.product_images.each do |product_image| %>
-  <%= image_tag url_for(product_image), alt: "Profile Picture" %>
+  <%= image_tag url_for(product_image), alt: "Profile Picture" ,size:"400x300"  %>
 
 <% end %>
 
