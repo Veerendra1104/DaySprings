@@ -22,6 +22,11 @@ class ProductsController < ApplicationController
   def edit
   end
 
+  def product_categories
+    @product_cat = Product::Category.all
+  end
+
+
   def out_of_stock    
    @products = Product.out_of_stock
   end 
