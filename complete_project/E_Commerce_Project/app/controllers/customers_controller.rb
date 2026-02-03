@@ -6,13 +6,14 @@ class CustomersController < ApplicationController
  
     # @list_of_customers = [1, 2, 3]
     # @customers = Customer.blacklisted_customers(@list_of_customers)
-    @customers = Customer.all
+    @customers = Customer.find(111)
   end
 
   # GET /customers/1 or /customers/1.json
   def show
-   
-    # rails params.inspect   ( This is used in debugging . )
+  #    rails params.inspect 
+  #  @customers = Customer.find(params[:id])
+    #  ( This is used in debugging . )
   end
 
   # GET /customers/new
