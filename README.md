@@ -470,10 +470,11 @@
 #   Day15
    **ActionMailer**
       * Action Mailer allows you to send emails from your Rails application. It's one of the two email related components in the Rails framework
-      * Steps to Do
+
+   **Steps to Do**
       * Generate the mailer name using the following command 
-             -> rails generate mailer mailername 
-             -> rails db:migrate
+            -> rails generate mailer mailername 
+            -> rails db:migrate
       * It will generate the some of the files 
             -> demp-app\app\mailers\customer_mailer.rb
             -> demp-app\app\views\customer_mailer
@@ -503,7 +504,14 @@
       * Now if the user is created then make configure to send the mail .
                   -> if @customer.save
                   CustomerMailer.with(customer: @customer).welcome_email.deliver 
-
+#   Day16
+      * Action MailBox 
+            -> The mail box is used for the inbound mails use to handle the mails and view them .
+      * THe steps are mentioned in the Day16 readme .
+      * The commands to know :
+            -> rails action_mailbox:install .
+            -> rails db:migrate.
+            -> rails g mailbox support ( generate the mailbox to handle . )          
 
 # Commands to remmber :
       -> ruby --version
