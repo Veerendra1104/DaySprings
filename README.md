@@ -511,7 +511,29 @@
       * The commands to know :
             -> rails action_mailbox:install .
             -> rails db:migrate.
-            -> rails g mailbox support ( generate the mailbox to handle . )          
+            -> rails g mailbox support ( generate the mailbox to handle . )       
+
+#   Day17
+      * Foreign key 
+            -> We can create table with foreign key by 2 ways 
+                  1. During the table creation using the reference key word 
+                        rails generate model Category name:string product:references
+                        rails db:migarte 
+                  2. Specfying in the order module that refernces to product .
+                        class Order < ApplicationRecord
+                              has_many :products, foreign_key: product_id
+                        end
+
+      * Specifying the primary key 
+            -> If the table is existed and but we have to change the column name which can be done inside the module as below
+                  class Customers
+                  def  index
+                  self.primary_key = User_id
+                  end
+                  end
+            -> now we can use the name User_id irrespective of the coulm name in table .
+      * Methods of ActiveRecord are add to the Day17 Readme .
+      
 
 # Commands to remmber :
       -> ruby --version
