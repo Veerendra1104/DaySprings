@@ -6,7 +6,7 @@ class CustomersController < ApplicationController
  
     # @list_of_customers = [1, 2, 3]
     # @customers = Customer.blacklisted_customers(@list_of_customers)
-    @customers = Customer.find(111)
+    @customers = Customer.all
   end
 
   # GET /customers/1 or /customers/1.json
