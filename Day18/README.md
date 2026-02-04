@@ -68,7 +68,45 @@
 	-> Empty is for collections ( array, hash, string )
 	-> Remaining methods nil, blank, presence work on everything .
 
+###   Extra methods "
+    1. try:
+        -> it call  the methods if present other wise it returns nil 
+            unless @number.nil?
+                @number.next
+            end
+        -> Instead we using the ablve unless method we can use the follwing try 
+            @number.try(:next)
+        -> Whent he try is operatied with method if method is present it's ok other wise it will give nil, it doesnot show the Nomethod error. if we nned error then we can use try!
+    
+    2. act_like :
+        -> The method acts_like? provides a way to check whether some class acts like some other class based on a simple convention .
+    3. in :
+         -> The predicate in? tests if an object is included in another object. An ArgumentError exception will be raised if the argument passed does not respond to include?.
+         1.in?([1, 2])        # => true
+        "lo".in?("hello")   # => true
+        25.in?(30..50)      # => false
+        1.in?(1)            # => ArgumentError
 
+
+    4. Arrays : dup, clone 
+        Shallow Copy : 
+            1.  arr = [1,2,3,4,5]
+                 c = arr.dup
+            2.  arr = [1,2,3,4,5]
+                c = new Array(arr)
+            3. arr = [1,2,3,4,5]
+                c = arr.clone 
+        Deep copy :
+            1. arr = [1,2,3,4,5]
+                c = arr.deep_dup
+
+    5. extract 
+        arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        c = arr.extract!{ |n| n % 2 == 0}
+
+        -> It extract stores in c and also removes elemnts from arr .
+
+    6. excluding and including 
 
 
 
