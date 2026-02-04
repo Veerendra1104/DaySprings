@@ -533,6 +533,31 @@
                   end
             -> now we can use the name User_id irrespective of the coulm name in table .
       * Methods of ActiveRecord are add to the Day17 Readme .
+
+#   Day18 
+      * Scopes :
+            -> Its one of the way which is used for connection between the models .
+            -> As we know by using the command : rails g migration Product::Category .
+            -> Here the Category table and Product table are connected to each other where we if we need to access the category which is done by using the Product scope .
+            -> The foreign key is not present in the category , if we need we need to add the column cat_id to the Product .
+
+      * Different ways of connecting the tables 
+            1. Joins :
+                  -> This is used to join the tables but which can lead to the n+1 query problem .
+                  -> It leads to lazy loading .
+            2. include :
+                  -> The include which is used to connect table and it solves the n+1 which provide 1+1 query execution .
+                  -> It leads to eager loading .
+            3. Scope :
+                  -> The scopes are used to create the model inside model which makes dependecy .
+                  -> It used in the scenario to improve the performance .
+            4. Association :
+                  -> These are used to connect tables based on the avaibalility .
+                  -> There are 4 different types of associtsions .
+                  -> We can call direction the activeRecord methods directly after connecting one table with other via chaining .
+            
+      * Active Support and it's methods : Day18 Readme.m
+
       
 
 # Commands to remmber :
