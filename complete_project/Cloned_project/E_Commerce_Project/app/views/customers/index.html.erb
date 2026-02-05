@@ -1,0 +1,70 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Customers" %>
+
+<marquee direction="right"> <h1 style="color : red;">Customers</h1> </marquee>
+
+<div class="table_box">
+
+  <table class="table_cts"  border = "2px solid black ;"  > 
+   <thead>
+    <tr>
+      <th> Name  </th>
+      <th> Email </th>
+      <th> About Me  </th>
+      <th> Image  </th>
+      <th> View  </th>
+      </tr> 
+    
+     </head>
+
+     <tbody>
+       <%# <% @customers =  @customers.give_unique_emails_users %> 
+       <%  @customers.each do |customer| %>  
+       <tr>
+        <td> <%= customer.name %> </td>
+        <td> <%= customer.email %> </td>
+         <td> <%= if customer.about_me.nil?
+                    "-"
+                  else 
+                    customer.about_me
+                  end %> 
+           </td>
+
+             <td>
+              
+              
+               <% if customer.profile_photo.attached? %>  
+               <% if customer.profile_photo.image? %>
+                <div  class="photo">
+                     <%= image_tag url_for(customer.profile_photo), alt: "Profile Picture" , size:"150x200" %>   
+                </div>
+                 <% else  %> 
+                  <p>The uploaded file is not image . </p>
+                  <% end %>
+                  <% else  %> 
+                  <p> No Profile Photo </p>
+                  <% end %>
+              </td>        
+         
+        <td >  <%= link_to "Show this customer", customer, class: "show-customer-link"  %> </td>
+       </tr> 
+      
+
+
+        <%  end %> 
+      </tbody>
+
+      
+  </table>
+
+   
+
+</div>
+
+<br>
+<br>
+
+
+<Button class="new_btn"> <%=  link_to "New customer", new_customer_path %> </Button>
+

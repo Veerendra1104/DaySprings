@@ -1,0 +1,39 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="customer-card">
+<%= render @product %>
+
+  <p>
+
+    
+<% if @product.product_images.attached? %>
+<% @product.product_images.each do |product_image| %>
+  <%= image_tag url_for(product_image), alt: "Profile Picture" ,size:"400x300"  %>
+
+<% end %>
+
+<% end  %>
+</p>
+
+<p>
+  <% if @product.invoice.attached? %>
+  <p>
+        <embed src="<%= url_for(@product.invoice) %>"
+         type="application/pdf"
+         width="100%"
+         height="600px">
+    </p>
+  <% else  %>
+  <p> No file is present   </p>
+  <% end  %>
+        
+</p>
+
+  <div class="card-actions">
+
+  <%= link_to "Edit this product", edit_product_path(@product), class: "btn edit-btn" %> |
+  <%= link_to "Back to products", products_path, class: "btn back-btn" %>
+
+  <%= button_to "Destroy this product", @product, method: :delete, class: "btn delete-btn"  %>
+</div>
+</div>

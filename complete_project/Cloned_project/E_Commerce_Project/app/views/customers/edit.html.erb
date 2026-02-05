@@ -1,0 +1,13 @@
+<% content_for :title, "Editing customer" %>
+
+<h1 style="color : red ; margin : 30px">Editing customer</h1>
+
+<%= render "form", customer: @customer %>
+ <%# <p> <%=  @customer.about_me %> </p>
+
+<br>
+
+<div class="edit_btns">
+ <Button class="crt_cst" > <%= link_to "Show this customer", @customer %> </Button>
+ <Button class="all_customer"> <%= link_to "Back to customers", customers_path %> </Button>
+</div>

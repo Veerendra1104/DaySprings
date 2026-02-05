@@ -1,0 +1,12 @@
+<% content_for :title, "Editing product" %>
+
+<h2 style="color : red ; margin : 40px">Editing products</h2>
+
+<%= render "form", product: @product %>
+
+<br>
+
+<div class="edit_btns">
+ <Button class="crt_cst" >   <%= link_to "Show this product", @product %> </Button>
+  <Button class="all_customer"> <%= link_to "Back to products", products_path %> </Button>
+</div>
