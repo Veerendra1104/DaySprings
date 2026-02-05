@@ -558,6 +558,24 @@
             
       * Active Support and it's methods : Day18 Readme.m
 
+#   Day19
+      * Sql Association :
+            -> These are database constraint which are applied during the table creation .
+            -> We can able to connect one table to other but not able to acess or perform operation( crud ) the other table .
+      * Rails Association :
+            -> These are used to connect the tables and via which we can access and perform the required operation on required table as they are connected .
+            -> Rails provides inbuit methods which makes easy to interact .
+            -> Rails association is not maditory it is used with sql association because we can able to fetch or perform the required operation which is not possible by sql associations .
+      * Polymorphic association :
+            -> It is  used to achive the STI( Single table inheritance ) where instead of creating the new tbales we can add the column to the table and as only one table .
+            -> Here the column type is manditory .
+            -> The draw back of polymorphic association is that it hard to handle complex data .
+      
+      * The sql and rails association info  added to Day19/READ.md
+      
+      Note :
+            -> The condition where to create the 2 tables without reference can be done in one db:migrate but if the tables are referenecing the first we need to migrate and we need to migrate others because it should be present as it is referencing.
+            -> The rails association is bidirectional , we need to give the implementaion foe both the models which are interacting 
       
 
 # Commands to remmber :
