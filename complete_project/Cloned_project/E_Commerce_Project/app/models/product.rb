@@ -14,13 +14,6 @@ class Product < ApplicationRecord
 
 
 
-
-
-
-
-
-
-
   # prewritten validation ( which are in built )
     validates:stock, numericality: true
     validates:stock, length: { minimum: 1, maximum: 20 }
