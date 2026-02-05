@@ -65,6 +65,16 @@
                             => false
                         2. nil.blank?
                             => true	
+        2. Instrumental Api's :
+            -> It provides the extra methods for the instrumental Api architecture .
+            -> This mehtods are only for those and not for the mvc .
+        3. Concerns :
+            -> The concerns means the files where the repeted code is add and can be access .
+            -> There are separate concerns for controller , models and for the views we can use the helper methods .
+
+        4. Multi Byte and language :
+            -> It is used where to display the content with respective to the location or the time .
+
 ### Note :
 	-> Empty is for collections ( array, hash, string )
 	-> Remaining methods nil, blank, presence work on everything .
