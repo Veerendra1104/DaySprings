@@ -15,6 +15,7 @@
                         4. current_time + 4.hour :
                             => 2026-02-04 09:41:33.168724000 UTC +00:00
                         5. 1.hour.ago :
+                        
                             => 2026-02-04 04:47:29.931601100 UTC +00:00
                         6. curr_day = Date.today :
                             => Wed, 04 Feb 2026

@@ -6,6 +6,21 @@ class Product < ApplicationRecord
 
 
 
+# associations 
+    has_many :orders
+
+
+
+
+
+
+
+
+
+
+
+
+
   # prewritten validation ( which are in built )
     validates:stock, numericality: true
     validates:stock, length: { minimum: 1, maximum: 20 }
