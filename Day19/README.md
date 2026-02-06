@@ -42,6 +42,9 @@
     2. Rails Assocition : 
         -> The rails assocation which is plays an important role for the data acessing .
         -> We can perform crud opertion of other table by using the connected table as they are connect via sql assocition .
+        -> There are main 4 types and 6 ways to achive it .
+        
+        
         -> The rails association is bi-directional where we need provide correct implementation ob both side .
                     * Example :    
                             -> In Order.rb model :
