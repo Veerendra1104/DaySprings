@@ -560,7 +560,7 @@
 
 #   Day19
       * Sql Association :
-            -> These are database constraint which are applied during the table creation .
+            -> It is used to connect between the models or tables with the foreign key constraint  .
             -> We can able to connect one table to other but not able to acess or perform operation( crud ) the other table .
       * Rails Association :
             -> These are used to connect the tables and via which we can access and perform the required operation on required table as they are connected .
@@ -572,7 +572,7 @@
             -> The draw back of polymorphic association is that it hard to handle complex data .
       
       * The sql and rails association info  added to Day19/READ.md
-      
+
       Note :
             -> The condition where to create the 2 tables without reference can be done in one db:migrate but if the tables are referenecing the first we need to migrate and we need to migrate others because it should be present as it is referencing.
             -> The rails association is bidirectional , we need to give the implementaion foe both the models which are interacting 
