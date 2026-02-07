@@ -577,6 +577,65 @@
             -> The condition where to create the 2 tables without reference can be done in one db:migrate but if the tables are referenecing the first we need to migrate and we need to migrate others because it should be present as it is referencing.
             -> The rails association is bidirectional , we need to give the implementaion foe both the models which are interacting 
       
+#   Day20
+      * One To Many Relatioship:
+            -> Here the tables are connected where one product can have the multiple order .
+            -> The new table will not be generated as the order belongs to product the ordert able will get the foreign key column of the product_id .
+            -> Example : 
+                  Product.rb
+                        class Product<ApplicationRecord
+                              has_many :orders
+                        end
+
+                  Order.rb
+                        class Order< ApplicationRecord
+                              belongs_to : product
+                        end                 
+
+      * Many To Many Relationship :
+            -> The many to many realtionship which is use to connect one table with other table with many number of possible data connections .
+            -> The one products can have many offers and the one offer can have many product .
+            -> it builts the new table by combining those 2 tables for the connection .
+            -> it can be achived by                   
+                  1. has_and_belongs_to_many :
+                        -> Here the new table will be genrated contains only the primary keys of the both the table to built the relationship .                     
+                        -> Example 
+                              Product.rb
+                                    class Product<ApplicationRecord
+                                          has_and_belongs_to_many :tags
+                                    end
+                              Order.rb
+                                    class Tags < ApplicationRecord
+                                          has_and_belongs_to_many :tags
+                                    end
+                  Note :
+                        -> This case is used when the tbales are only need to link without extra data or coumns .
+
+                  2. has_many , through  :
+                        -> Here  the new table will be genrated contains  the primary keys of the both the table and the extra coumns to built the relationship .
+                        -> The extra required data can be added to table and using that data can perform the required operations .
+                        -> Example 
+                              Product.rb
+                                    class Product<ApplicationRecord
+                                          has_many :offers, through: :product_offers
+                                    end
+                              Offers
+                                    class Offer < ApplicationRecord
+                                          has_many :products, through: :product_offers
+                                    end
+                  Note :
+                        -> This case which is used to connect between tables many to many with the extra cloumns .
+
+      *  dependent: :destroy:
+            -> The dependent which is used in condition where if the parent table get deleted the child table aslo gets delete .
+            -> Example :
+                  class Product: ApplicationRecord
+                        has_many :orders, dependent: :destroy
+                  end
+            Note :
+                  -> In one to one if the child table the child record  referces the same parent record multiple time in this conditon does not allow to delete the parent recoded because od the one to one relationship .
+
+
 
 # Commands to remmber :
       -> ruby --version
